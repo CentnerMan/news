@@ -11,15 +11,15 @@ CREATE TABLE users (
 
 DROP TABLE IF EXISTS roles;
 CREATE TABLE roles (
-  id                    serial,
+  id                    bigserial,
   name                  VARCHAR(50) NOT NULL,
   PRIMARY KEY (id)
 );
 
 DROP TABLE IF EXISTS users_roles;
 CREATE TABLE users_roles (
-  user_id               INT NOT NULL,
-  role_id               INT NOT NULL,
+  user_id               bigint NOT NULL,
+  role_id               bigint NOT NULL,
   PRIMARY KEY (user_id, role_id),
   FOREIGN KEY (user_id)
   REFERENCES users (id),

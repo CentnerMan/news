@@ -22,6 +22,12 @@
     <h1>Новостной портал</h1>
 
     Свежие новости, с пылу, с жару! 1 рубль пара!
+
+    <ul>
+      <li th:each="article : ${articles}">
+        <div th:remove="tag" th:utext="${article.text}"></div>
+      </li>
+    </ul>
 </div>
 </body>
 </html>
